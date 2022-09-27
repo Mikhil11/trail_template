@@ -44,7 +44,17 @@ jobs:
         if: always()
         with:
           command: addpath("buildutil"),codecheckToolbox()
-
+      
+      # Commit the JSON for the badge for the issues
+      - name: commit code issues badge JSON
+        if: always()
+        continue-on-error: true
+        run: |
+          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
+          git commit report/badge/code_issues.json -m "Update code issues badge"
+          git fetch
+          git push
+      
       # generate test parameters text file
       - name: Create test parameters file
         uses: matlab-actions/run-command@v1

@@ -21,6 +21,8 @@ badgeJSON = jsonencode(ParamInfo);
 try
     fwrite(fid,badgeJSON);
 catch e
+    fclose(fid);
     rethrow e
 end
+fclose(fid);
 end

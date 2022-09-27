@@ -10,7 +10,7 @@ function codecheckToolbox(rootDir)
     filesToCheck = [filesToCheck;fullfile(string({testFileInfo.folder}'),string({testFileInfo.name}'))];
     
     if isempty(filesToCheck)
-        error("%d:codeissues",string(trail_template),"No files to check.")
+        error("%d:codeissues",string("trail_template"),"No files to check.")
     end
     issues = checkcode(filesToCheck);
     issues = [issues{:}];
@@ -31,7 +31,7 @@ function codecheckToolbox(rootDir)
     
     if issueCount ~= 0
         checkcode(filesToCheck)
-        error("%d:codeissues",string(trail_template),"%d Toolbox requires all code check issues be resolved.",string(trail_template))
+        error("%d:codeissues",string("trail_template"),"%d Toolbox requires all code check issues be resolved.",string("trail_template"))
     end
     TestFileTxt()
 end

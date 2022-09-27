@@ -9,20 +9,16 @@ allFiles= vertcat(FunctionFileInfo,FunctionFileInfo1);
 
 % generate Test_parameters.txt file based on number of function files in
 % the code folder
-testFileInfo = fullfile(rootDir,"test","Test_parameters.txt");
-fid = fopen(testFileInfo,'w');
+testFileInfo = fullfile(rootDir,"test","Test_parameters.json");
+fid = fopen(testFileInfo,"w");
+ParamInfo = struct;
 for i=1:length(allFiles)
-    a = string(allFiles(i).name);
-    FunName = strsplit(a,'.');
-    try
-        fprintf(fid, '"%s":\n', FunName(1));
-        fprintf(fid, 'Input parameter:\n');
-        fprintf(fid, 'Expected Output:\n');
-    catch e
-        fclose(fid);
-        rethrow e
-    end
+    ParamInfo(i).name = allFiles(i).name;
+    ParamInfo(i).Input_parameter = "{2,3}";
+    ParamInfo(i).Expected_output = "5";
 end
+ParamJSON = jsonencode(ParamInfo);
+fwrite(fid,ParamJSON);
 fclose(fid);
 
 end

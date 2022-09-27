@@ -59,7 +59,7 @@ jobs:
           name: "Test_File.json"
           json: Jsontxt
           dir: "tests/"
-      - run: 
+      - run: | 
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
           git add tests/Test_File.json
           git commit -m "JSON File containing test parameters created"

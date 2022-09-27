@@ -64,13 +64,6 @@ jobs:
       - run: |
           echo "action_state=Jsontxt" >> $GITHUB_ENV
       
-      #Create json file
-      - name: create-json
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: "Test_File.json"
-          json: echo "${{ env.action_state }}"
-          dir: "tests/"
       - run: | 
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
           git add --all

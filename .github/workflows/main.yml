@@ -75,8 +75,8 @@ jobs:
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
           git add --all
           git commit tests/Test_File.json -m "JSON File containing test parameters created"
-          git push
           git add -A
           git diff-index --quiet HEAD || git commit -m 'bla'
+          git push
            
      

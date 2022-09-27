@@ -54,7 +54,6 @@ jobs:
           git add --all
           git commit report/badge/code_issues.json -m "Update code issues badge"
           git push
-          git clean -f
       
       # generate test parameters text file
       - name: Create test parameters file

@@ -15,7 +15,7 @@ for i=1:length(allFiles)
     a = string(allFiles(i).name);
     string_new = strsplit(a,'.');
     disp(class(string_new(1)));
-    fprintf(fid, '%s:\n',string_new(1));
+    %fprintf(fid, '%s:\n',string_new(1));
     fprintf(fid, 'Input parameter:\n');
     fprintf(fid, 'Expected Output:\n');
 end

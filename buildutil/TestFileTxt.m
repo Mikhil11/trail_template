@@ -1,4 +1,4 @@
-function TestFileTxt()
+function ParamJSON = TestFileTxt()
 
 % get the current directory and all the files from code folder
 rootDir = pwd();
@@ -18,7 +18,4 @@ for i=1:length(allFiles)
     ParamInfo(i).Expected_output = "5";
 end
 ParamJSON = jsonencode(ParamInfo);
-fwrite(fid,ParamJSON);
-fclose(fid);
-
 end

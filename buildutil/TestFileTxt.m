@@ -9,7 +9,7 @@ allFiles= vertcat(FunctionFileInfo,FunctionFileInfo1);
 
 % generate Test_parameters.txt file based on number of function files in
 % the code folder
-testFileInfo = fullfile(rootDir,"test","Test_parameters.json");
+testFileInfo = fullfile("test","Test_parameters.json");
 fid = fopen(testFileInfo,"w");
 ParamInfo = struct;
 for i=1:length(allFiles)

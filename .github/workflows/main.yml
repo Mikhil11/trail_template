@@ -51,13 +51,14 @@ jobs:
         if: always()
         with:
           command: addpath("buildutil"),Jsontxt = TestFileTxt()
+           echo "action_state=Jsontxt" >> $GITHUB_ENV
       
       #Create json file
       - name: create-json
         uses: jsdaniell/create-json@1.1.2
         with:
           name: "Test_File.json"
-          json: Jsontxt
+          json: echo "${{ env.action_state }}"
           dir: "tests/"
       - run: | 
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"

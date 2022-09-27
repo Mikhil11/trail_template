@@ -51,8 +51,8 @@ jobs:
         continue-on-error: true
         run: |
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
-          git commit report/badge/code_issues.json -m "Update code issues badge"
-          git fetch
+          git add report/badge/code_issues.json
+          git commit -m "Update code issues badge"
           git push
       
       # generate test parameters text file

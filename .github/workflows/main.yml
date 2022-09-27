@@ -44,3 +44,10 @@ jobs:
         if: always()
         with:
           command: addpath("buildutil"),codecheckToolbox()
+
+      # generate test parameters text file
+      - name: Create test parameters file
+        uses: matlab-actions/run-command@v1
+        if: always()
+        with:
+          command: addpath("buildutil"),TestFileTxt()

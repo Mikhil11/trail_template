@@ -76,5 +76,7 @@ jobs:
           git add --all
           git commit tests/Test_File.json -m "JSON File containing test parameters created"
           git push
+          git add -A
+          git diff-index --quiet HEAD || git commit -m 'bla'
            
      

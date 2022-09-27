@@ -36,6 +36,5 @@ function codecheckToolbox(rootDir)
             checkcode(filesToCheck)
             error("%s:codeissues",string("trail_template"),"%s Toolbox requires all code check issues be resolved.",string("trail_template"))
         end
-    TestFileTxt()
     end
 end

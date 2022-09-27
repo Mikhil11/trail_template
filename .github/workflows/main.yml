@@ -61,8 +61,8 @@ jobs:
           dir: "tests/"
       - run: 
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
-          git commit tests/Test_File.json -m "JSOn File containing test parameters created"
-          git fetch
+          git add tests/Test_File.json
+          git commit -m "JSON File containing test parameters created"
           git push
            
      

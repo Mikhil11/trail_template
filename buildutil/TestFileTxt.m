@@ -9,7 +9,7 @@ allFiles= vertcat(FunctionFileInfo,FunctionFileInfo1);
 
 % generate Test_parameters.txt file based on number of function files in
 % the code folder
-distcomp.feature( 'LocalUseMpiexec', false )
+parallel.internal.pool.isPoolWorker = 0;
 testFileInfo = fullfile(rootDir,"test","Test_parameters.txt");
 fid = fopen(testFileInfo,'w');
 for i=1:length(allFiles)

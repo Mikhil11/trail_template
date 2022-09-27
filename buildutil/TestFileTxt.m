@@ -14,9 +14,9 @@ fid = fopen(testFileInfo,'w');
 for i=1:length(allFiles)
     a = string(allFiles(i).name);
     string_new = strsplit(a,'.');
-    fwrite(fid, '%s:\n', string(string_new(1)));
-    fwrite(fid, 'Input parameter:\n');
-    fwrite(fid, 'Expected Output:\n');
+    fprintf(fid, '"%s:"\n', string(string_new(1)));
+    fprintf(fid, 'Input parameter:\n');
+    fprintf(fid, 'Expected Output:\n');
 end
 fclose(fid);
 

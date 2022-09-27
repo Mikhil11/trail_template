@@ -64,7 +64,11 @@ jobs:
       - run: |
           echo "action_state=Jsontxt" >> $GITHUB_ENV
       
-      - run: | 
+      # Commit the test parameters into json file
+      - name: commit code issues badge JSON
+        if: always()
+        continue-on-error: true
+        run: | 
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
           git add tests/Test_File.json
           git commit -m "JSON File containing test parameters created"

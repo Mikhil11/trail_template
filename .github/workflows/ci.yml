@@ -51,3 +51,10 @@ jobs:
           git add tests/Unittest_results.txt
           git commit -m "test results updated"
           git push
+      
+      # Publish test results
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: "report/test-results.xml"

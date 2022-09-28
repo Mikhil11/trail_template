@@ -11,8 +11,10 @@ function TestFileTxt()
     % the code folder
     testFileInfo = fullfile(rootDir,"tests","Test_parameters.txt");
     fid = fopen(testFileInfo,"w");
+     
     for i=1:length(allFiles)
-        fprintf(fid,"%s",allFiles(i).name,":\n");
+        a_split = strsplit(allFiles(i).name,'.');
+        fprintf(fid,"%s:\n",string(a_split(1)));
         fprintf(fid,"Input parameter:\n");
         fprintf(fid,"Expected Output:\n");
     end

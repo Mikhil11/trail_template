@@ -54,12 +54,15 @@ jobs:
           git add report/badge/code_issues.json
           git commit -m "Update code issues badge"
           git push
-          
 
+      # create environment variable
+      - name: Set the test_value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+          
       # generate test parameters text file
       - name: Create test parameters file
-        env:
-          Json_v: test_value
         uses: matlab-actions/run-command@v1
         if: always()
         with:
@@ -73,7 +76,7 @@ jobs:
         if: always()
         with:
           name: "test2.json"
-          json: ${{env.Json_v}}
+          json: ${{env.action_state}}
           dir: 'tests/'
       
       #Add files to repository

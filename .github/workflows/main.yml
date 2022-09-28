@@ -67,7 +67,7 @@ jobs:
       
       # Commit the test parameters into json file
       - name: commit test parameters to JSON
-        id: create -json
+        id: create-json
         uses: jsdaniell/create-json@1.1.2
         if: always()
         continue-on-error: true

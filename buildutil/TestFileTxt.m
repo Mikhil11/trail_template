@@ -1,4 +1,4 @@
-function TestFileTxt()
+function badgeJSON = TestFileTxt()
 
     % get the current directory and all the files from code folder
     rootDir = pwd();
@@ -18,12 +18,4 @@ function TestFileTxt()
     end
     badgeJSON = jsonencode(ParamInfo);
     disp(badgeJSON)
-    fid = fopen(testFileInfo,'w');
-    try
-        fprintf(fid,'%s',badgeJSON);
-    catch e
-        fclose(fid);
-        rethrow e
-    end
-    fclose(fid);
 end

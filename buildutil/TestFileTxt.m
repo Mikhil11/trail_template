@@ -12,7 +12,7 @@ function TestFileTxt()
     testFileInfo = fullfile(rootDir,"tests","Test_parameters.txt");
     fid = fopen(testFileInfo,"w");
     for i=1:length(allFiles)
-        fprintf(fid,"%s\n",allFiles(i).name);
+        fprintf(fid,"%s",allFiles(i).name,":\n");
         fprintf(fid,"Input parameter:\n");
         fprintf(fid,"Expected Output:\n");
     end

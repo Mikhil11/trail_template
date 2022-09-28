@@ -62,17 +62,18 @@ jobs:
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),Json_v = $(TestFileTxt())
+          command: addpath("buildutil"),Json_text = TestFileTxt()
 
       
       # Commit the test parameters into json file
       - name: commit test parameters to JSON
+        id: create -json
+        uses: jsdaniell/create-json@1.1.2
         if: always()
         continue-on-error: true
-        run: | 
-          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
-          git add tests/Test_parameters.json
-          git commit -m "JSON File containing test parameters created"
-          git push
+        with:
+          name: "test2.json"
+          json: ${{env.Json_v}}
+          dir: 'tests/'
            
      

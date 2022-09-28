@@ -41,3 +41,13 @@ jobs:
         if: always()
         with:
           command: addpath("buildutil"),RunTest()
+          
+      #Add files to repository
+      - name: Add-files
+        if: always()
+        continue-on-error: true
+        run: |
+          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
+          git add tests/Unittest_results.txt
+          git commit -m "test results updated"
+          git push

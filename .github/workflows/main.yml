@@ -75,5 +75,11 @@ jobs:
           name: "test2.json"
           json: ${{env.Json_v}}
           dir: 'tests/'
+          
+      - run: |
+          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
+          git add tests/test2.json
+          git commit -m "test parameters file updated"
+          git push
            
      

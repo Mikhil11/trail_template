@@ -1,4 +1,4 @@
-function badgeJSON = TestFileTxt()
+function TestFileTxt()
 
     % get the current directory and all the files from code folder
     rootDir = pwd();

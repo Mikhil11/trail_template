@@ -75,6 +75,6 @@ jobs:
         continue-on-error: true
         run: |
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
-          git add tests/Test_parameters.json
+          git add tests/Test_parameters.txt
           git commit -m "test parameters file updated"
           git push

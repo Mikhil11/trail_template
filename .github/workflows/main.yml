@@ -67,7 +67,7 @@ jobs:
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),Json_text = TestFileTxt()
+          command: addpath("buildutil"),$action_state = TestFileTxt()
 
       
       # Commit the test parameters into json file
@@ -77,7 +77,7 @@ jobs:
         if: always()
         with:
           name: "test2.json"
-          json: ${{steps.matlab_1.outputs.*}}
+          json: ${{env.action_state}}
           dir: 'tests/'
       
       #Add files to repository

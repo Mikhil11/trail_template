@@ -18,6 +18,7 @@ function TestFileTxt()
     end
     badgeJSON = jsonencode(ParamInfo);
     disp(badgeJSON)
+    fid = fopen(testFileInfo,"w");
     try
         fwrite(fid,badgeJSON);
     catch e

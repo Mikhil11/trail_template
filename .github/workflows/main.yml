@@ -57,10 +57,12 @@ jobs:
       
       # generate test parameters text file
       - name: Create test parameters file
+        env:
+          Json_v: "test"
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),TestFileTxt()
+          command: addpath("buildutil"),Json_v = $(TestFileTxt())
 
       
       # Commit the test parameters into json file

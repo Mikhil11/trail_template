@@ -42,9 +42,12 @@ jobs:
         with:
           command: addpath("buildutil"),RunTest()
           
-      # Publish test results
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+      #Add files to repository
+      - name: Add-files
         if: always()
-        with:
-          files: "report/test_report.xml"
+        continue-on-error: true
+        run: |
+          git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"
+          git add report/*
+          git commit -m "test report captured"
+          git push

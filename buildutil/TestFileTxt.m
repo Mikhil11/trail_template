@@ -9,7 +9,7 @@ function badgeJSON = TestFileTxt()
     
     % generate Test_parameters.txt file based on number of function files in
     % the code folder
-    testFileInfo = fullfile(rootDir,"test","Test_parameters.json");
+    testFileInfo = fullfile(rootDir,"tests","Test_parameters.json");
     ParamInfo = struct;
     for i=1:length(allFiles)
         ParamInfo(i).name = allFiles(i).name;
@@ -18,4 +18,11 @@ function badgeJSON = TestFileTxt()
     end
     badgeJSON = jsonencode(ParamInfo);
     disp(badgeJSON)
+    try
+        fwrite(fid,badgeJSON);
+    catch e
+        fclose(fid);
+        rethrow e
+    end
+    fclose(fid);
 end

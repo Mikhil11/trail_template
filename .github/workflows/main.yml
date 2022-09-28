@@ -82,6 +82,7 @@ jobs:
       
       #Add files to repository
       - name: Add-files
+        if: always()
         continue-on-error: true
         run: |
           git config --global user.email "mikhils@mathworks.com" && git config --global user.name "Mikhil11"

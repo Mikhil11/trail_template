@@ -55,13 +55,11 @@ jobs:
           git commit -m "Update code issues badge"
           git push
           
-      #Generate environment variable
-      - name: Create Environment variable
-        env:
-          Json_v: test_value
-      
+
       # generate test parameters text file
       - name: Create test parameters file
+        env:
+          Json_v: test_value
         uses: matlab-actions/run-command@v1
         if: always()
         with:

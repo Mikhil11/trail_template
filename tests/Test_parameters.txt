@@ -1,6 +1,6 @@
 Sub_var:
-Input parameter:{2,3}
-Expected Output:"-1"
+Input parameter:
+Expected Output:
 add_var:
-Input parameter:{2,3}
-Expected Output:"5"
+Input parameter:
+Expected Output:

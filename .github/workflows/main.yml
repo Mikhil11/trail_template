@@ -77,7 +77,7 @@ jobs:
         if: always()
         with:
           name: "test2.json"
-          json: ${{steps.matlab_1.outputs.Json_text}}
+          json: ${{steps.matlab_1.outputs.*}}
           dir: 'tests/'
       
       #Add files to repository

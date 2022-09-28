@@ -63,6 +63,7 @@ jobs:
           
       # generate test parameters text file
       - name: Create test parameters file
+        id: matlab_1
         uses: matlab-actions/run-command@v1
         if: always()
         with:
@@ -76,7 +77,7 @@ jobs:
         if: always()
         with:
           name: "test2.json"
-          json: ${{env.action_state}}
+          json: ${{steps.matlab_1.outputs.Json_text}}
           dir: 'tests/'
       
       #Add files to repository

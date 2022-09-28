@@ -1,6 +1,4 @@
-"Sub_var":
-Input parameter:{2,3}
-Expected Output:"-1"
-"add_var":
-Input parameter:{2,3}
-Expected Output:"5"
+Sub_var.mlx:\nInput parameter:
+Expected Output:
+add_var.mlx:\nInput parameter:
+Expected Output:

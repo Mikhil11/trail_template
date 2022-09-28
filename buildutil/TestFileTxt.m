@@ -9,21 +9,12 @@ function TestFileTxt()
     
     % generate Test_parameters.txt file based on number of function files in
     % the code folder
-    testFileInfo = fullfile(rootDir,"tests","Test_parameters.json");
-    ParamInfo = struct;
-    for i=1:length(allFiles)
-        ParamInfo(i).name = allFiles(i).name;
-        ParamInfo(i).Input_parameter = "{2,3}";
-        ParamInfo(i).Expected_output = "5";
-    end
-    badgeJSON = jsonencode(ParamInfo);
-    disp(badgeJSON)
+    testFileInfo = fullfile(rootDir,"tests","Test_parameters.txt");
     fid = fopen(testFileInfo,"w");
-    try
-        fwrite(fid,badgeJSON);
-    catch e
-        fclose(fid);
-        rethrow e
+    for i=1:length(allFiles)
+        fprintf(fid,allFiles(i).name);
+        fprintf(fid,"Input parameter:");
+        fprintf(fid,"Expected Output:");
     end
     fclose(fid);
 end

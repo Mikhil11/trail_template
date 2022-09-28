@@ -18,9 +18,9 @@ function TestFileTxt()
     end
     badgeJSON = jsonencode(ParamInfo);
     disp(badgeJSON)
-    fid = fopen(testFileInfo,"w");
+    fid = fopen(testFileInfo,'w');
     try
-        fwrite(fid,badgeJSON);
+        fprintf(fid,'%s',badgeJSON);
     catch e
         fclose(fid);
         rethrow e

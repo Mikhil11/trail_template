@@ -40,4 +40,4 @@ jobs:
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),Runtest()
+          command: addpath("buildutil"),RunTest()

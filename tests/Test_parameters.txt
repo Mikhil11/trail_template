@@ -1,1 +1,6 @@
-Sub_var.mlxInput parameter:Expected Output:add_var.mlxInput parameter:Expected Output:
+Sub_var.mlx
+Input parameter:
+Expected Output:
+add_var.mlx
+Input parameter:
+Expected Output:

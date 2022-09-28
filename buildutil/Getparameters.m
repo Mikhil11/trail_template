@@ -3,7 +3,7 @@ function [FName,FInput,FOutput] = Getparameters()
 % get the current directory and read the test_parameters text file line by
 % line
 rootDir = pwd();
-testFileInfo = fullfile(rootDir,"test","Test_parameters.txt");
+testFileInfo = fullfile(rootDir,"tests","Test_parameters.txt");
 tline = readlines(testFileInfo);
 tline = tline(string(tline)~="");
 

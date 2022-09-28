@@ -1,4 +1,6 @@
-Sub_var.mlx:\nInput parameter:
+Sub_var:
+Input parameter:
 Expected Output:
-add_var.mlx:\nInput parameter:
+add_var:
+Input parameter:
 Expected Output:

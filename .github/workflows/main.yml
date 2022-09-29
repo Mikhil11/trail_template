@@ -67,7 +67,7 @@ jobs:
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),TestFileTxt()
+          command: addpath("buildutil"),Struct_var = TestFileTxt()
 
       #Add files to repository
       - name: Add-files

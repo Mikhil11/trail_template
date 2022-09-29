@@ -67,7 +67,7 @@ jobs:
         uses: matlab-actions/run-command@v1
         if: always()
         with:
-          command: addpath("buildutil"),TestFileTxt()
+          command: addpath("buildutil"),struct_var = TestFileTxt(); save('mystructfile','struct_var');
 
       #Add files to repository
       - name: Add-files
@@ -78,3 +78,9 @@ jobs:
           git add tests/Test_parameters.txt
           git commit -m "test parameters file updated"
           git push
+
+      - name: displat struct variable
+        uses: matlab-actions/run-command@v1
+        if: always()
+        with:
+          command: load('mystructfile');addpath("buildutil"),struct_disp(struct_var);
